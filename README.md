@@ -4,13 +4,14 @@ ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-linux]
 Rails 5.1.6
 
 ### Application Setup
-- rails new data-migrate-issue-89
-- Add gem 'data_migrate' to Gemfile
-- bundle install
-- rails g migration CreatePeople name address
-- rails g data_migration AddPeopleData
-- rails g migration CreateProducts name price
-- rails g data_migration AddProductsData
+- `rails new data-migrate-issue-89`
+- Add `gem 'data_migrate'` to Gemfile
+- `bundle install`
+- `rails g migration CreatePeople name address`
+- `rails g data_migration AddPeopleData`
+- `rails g migration CreateProducts name price`
+- `rails g data_migration AddProductsData`
+- Comment out the line `raise ActiveRecord::IrreversibleMigration` in data migrations so that they can be reverted.
 
 ### Reproducing Issue
 Migrate database
